@@ -1,6 +1,24 @@
-# Note Taking Website
+# Note-Taking Website
 
-Welcome to the Note Taking Website repository! This web application is built using Django, a Python web framework, to provide a user-friendly and secure platform for managing notes. Users can sign up, log in, and log out to create, edit, and delete their notes seamlessly.
+<p>
+<img src="https://img.shields.io/badge/Django-239120?logo=django&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-239120?logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white" />
+<img src="https://img.shields.io/badge/html5-E34F26?logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/css3-1572B6?logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/bootstrap-563D7C?logo=bootstrap&logoColor=white" />
+<img src="https://img.shields.io/badge/Github-181717?logo=github&logoColor=white" />
+<img src="https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white" />
+<img src="https://img.shields.io/badge/GIT-E44C30?logo=git&logoColor=white" />
+<img src="https://img.shields.io/badge/prettier-1A2C34?logo=prettier&logoColor=white" />
+</p>
+
+![PyPI v0.5](https://img.shields.io/badge/PyPI-v0.5-blue.svg)
+![MIT License](https://img.shields.io/badge/License-MIT-lightgray.svg)
+![build](https://img.shields.io/badge/Build-passing-green.svg)
+
+
+Welcome to the Note-Taking Website repository! This web application is built using Django, a Python web framework, to provide a user-friendly and secure platform for managing notes. Users can sign up, log in, and log out to create, edit, and delete their notes seamlessly.
 
 ## Features
 
