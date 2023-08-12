@@ -70,6 +70,7 @@ To get started with the Note Taking Website, follow these steps:
    ```
 
 6. **Access the Website:** Open your web browser and go to `http://127.0.0.1:8000/` to access the Note Taking Website.
+   Default admin: **Username**: user **passowrd**:1234
 
 ## Contributing
 
