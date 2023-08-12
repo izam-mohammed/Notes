@@ -17,12 +17,20 @@ To get started with the Note Taking Website, follow these steps:
 1. **Clone the Repository:** Clone this repository to your local machine using the following command:
 
    ```
-   git clone https://github.com/your-username/note-taking-website.git
+   git clone https://github.com/izam-mohammed/Notes.git
    ```
 
-2. **Navigate to the Directory:** Change into the project directory:
+2. **Setup Virtualenv (Windows)**:
    ```
-   cd note-taking-website
+   pip install virtualenv
+   virtualenv venv
+   .\venv\Scripts\Activate
+   ```
+   **Setup Virtualenv (mac/linux)**:
+   ```
+   pip install virtualenv
+   virtualenv venv
+   source venv/bin/activate
    ```
 
 3. **Install Dependencies:** Install the required Python packages using `pip`:
@@ -32,6 +40,7 @@ To get started with the Note Taking Website, follow these steps:
 
 4. **Database Setup:** Set up the database by running migrations:
    ```
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
