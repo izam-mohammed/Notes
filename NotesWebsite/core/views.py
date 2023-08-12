@@ -17,16 +17,17 @@ def login(request):
     Returns:
     - HttpResponse: Redirects to 'index' page if login is successful, otherwise renders 'login.html'.
     """
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request ,username=username, password=password)
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
         if user is not None:
-            request.session['username'] = username
+            request.session["username"] = username
             return redirect(index)
         else:
             messages.add_message(request, messages.WARNING, "Invalid Credentials")
-    return render(request, 'login.html')
+    return render(request, "login.html")
+
 
 @never_cache
 def index(request):
@@ -39,11 +40,16 @@ def index(request):
     Returns:
     - HttpResponse: Renders 'index.html' with user's notes and username if authenticated, otherwise redirects to 'login' page.
     """
-    if 'username' in request.session:
-        user = User.objects.get(username=request.session['username'])
+    if "username" in request.session:
+        user = User.objects.get(username=request.session["username"])
         notes = [(i.id, i.title) for i in Notes.objects.filter(user=user)]
-        return render(request, 'index.html', context={'username': request.session['username'],'notes':notes})
+        return render(
+            request,
+            "index.html",
+            context={"username": request.session["username"], "notes": notes},
+        )
     return redirect(login)
+
 
 @never_cache
 def logout(request):
@@ -56,12 +62,13 @@ def logout(request):
     Returns:
     - HttpResponse: Redirects to 'login' page after logging out.
     """
-    if 'username' in request.session:
+    if "username" in request.session:
         try:
             del request.session["username"]
         except:
             pass
     return redirect(login)
+
 
 def signup(request):
     """
@@ -73,26 +80,27 @@ def signup(request):
     Returns:
     - HttpResponse: Redirects to 'index' page if signup is successful, otherwise renders 'signup.html'.
     """
-    if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password2 = request.POST['password2']
-        
+    if request.method == "POST":
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        password2 = request.POST["password2"]
+
         if password != password2:
-            messages.add_message(request, messages.WARNING, 'Password not matching')
+            messages.add_message(request, messages.WARNING, "Password not matching")
         elif User.objects.filter(username=username):
-            messages.add_message(request, messages.WARNING, 'username is taken')
+            messages.add_message(request, messages.WARNING, "username is taken")
         elif User.objects.filter(email=email):
-            messages.add_message(request, messages.WARNING, 'email is taken')
+            messages.add_message(request, messages.WARNING, "email is taken")
         else:
-            password = make_password(password, salt=None, hasher='pbkdf2_sha256')
+            password = make_password(password, salt=None, hasher="pbkdf2_sha256")
             user = User(username=username, email=email, password=password)
             user.save()
-            request.session['username'] = username
-            return redirect('/')
-            
-    return render(request, 'signup.html')
+            request.session["username"] = username
+            return redirect("/")
+
+    return render(request, "signup.html")
+
 
 @never_cache
 def make_note(request):
@@ -105,18 +113,23 @@ def make_note(request):
     Returns:
     - HttpResponse: Redirects to 'index' page if note creation is successful, otherwise renders 'make_note.html'.
     """
-    if 'username' in request.session:
-        if request.method == 'POST':
-            title = request.POST['title']
-            note = request.POST['note']
-            
-            new_note = Notes(user=User.objects.get(username=request.session['username']),title=title, caption=note)
+    if "username" in request.session:
+        if request.method == "POST":
+            title = request.POST["title"]
+            note = request.POST["note"]
+
+            new_note = Notes(
+                user=User.objects.get(username=request.session["username"]),
+                title=title,
+                caption=note,
+            )
             new_note.save()
-            return redirect('/')
-        return render(request, 'make_note.html')
+            return redirect("/")
+        return render(request, "make_note.html")
     else:
-        return redirect('/')
-    
+        return redirect("/")
+
+
 @never_cache
 def note(request, pk):
     """
@@ -129,20 +142,21 @@ def note(request, pk):
     Returns:
     - HttpResponse: Renders 'note.html' with the note's details if authenticated and note exists, otherwise redirects to 'login' page.
     """
-    if 'username' in request.session:
+    if "username" in request.session:
         note = Notes.objects.get(id=pk)
-        
-        if request.method == 'POST':
-            new_title = request.POST['title']
-            new_note = request.POST['note']
+
+        if request.method == "POST":
+            new_title = request.POST["title"]
+            new_note = request.POST["note"]
             note.title = new_title
             note.caption = new_note
             note.save()
-        
-        context = {'title':note.title, 'note':note.caption}
-        return render(request, 'note.html', context=context)
+
+        context = {"title": note.title, "note": note.caption}
+        return render(request, "note.html", context=context)
     else:
-        return redirect('/')
+        return redirect("/")
+
 
 @never_cache
 def delnote(request, pk):
@@ -156,9 +170,9 @@ def delnote(request, pk):
     Returns:
     - HttpResponse: Redirects to 'index' page after deleting the note.
     """
-    if 'username' in request.session:
+    if "username" in request.session:
         note = Notes.objects.filter(id=pk)
         if note is not None:
             noterow = Notes.objects.get(id=pk)
             noterow.delete()
-    return redirect('/')
+    return redirect("/")

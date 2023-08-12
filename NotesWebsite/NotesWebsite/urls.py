@@ -19,8 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     # URL to access the Django admin panel
-    path('admin/', admin.site.urls),
-    
+    path("admin/", admin.site.urls),
     # URL patterns for the app's views defined in the 'core' app's 'urls.py'
-    path('', include('core.urls')),
+    path("", include("core.urls")),
 ]

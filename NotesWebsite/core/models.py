@@ -5,6 +5,7 @@ from datetime import datetime
 User = get_user_model()
 # Create your models here.
 
+
 class Notes(models.Model):
     """
     Represents a user's note.
@@ -18,11 +19,12 @@ class Notes(models.Model):
     Methods:
     - __str__(): Returns a string representation of the note (title).
     """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=datetime.now)
     title = models.CharField(max_length=100)
     caption = models.TextField()
-    
+
     def __str__(self):
         """
         Returns a string representation of the note (title).
@@ -31,4 +33,3 @@ class Notes(models.Model):
         - str: The title of the note.
         """
         return self.title
-    
