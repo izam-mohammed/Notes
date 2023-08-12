@@ -59,6 +59,7 @@ To get started with the Note Taking Website, follow these steps:
 
 4. **Database Setup:** Set up the database by running migrations:
    ```
+   cd NotesWebsite
    python manage.py makemigrations
    python manage.py migrate
    ```
