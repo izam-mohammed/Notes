@@ -1,9 +1,9 @@
 .link {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .shadow {
-  box-shadow: none;
-  cursor: pointer;
+    box-shadow: none;
+    cursor: pointer;
 }
