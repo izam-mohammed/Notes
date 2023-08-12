@@ -18,7 +18,7 @@
 ![build](https://img.shields.io/badge/Build-passing-green.svg)
 
 
-Welcome to the Note-Taking Website repository! This web application is built using Django, a Python web framework, to provide a user-friendly and secure platform for managing notes. Users can sign up, log in, and log out to create, edit, and delete their notes seamlessly.
+Welcome to my Note-Taking Website repository! This web application is built using Django, a Python web framework, to provide a user-friendly and secure platform for managing notes. Users can sign up, log in, and log out to create, edit, and delete their notes seamlessly.
 
 ## Features
 
