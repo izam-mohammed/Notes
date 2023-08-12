@@ -36,6 +36,7 @@ To get started with the Note Taking Website, follow these steps:
 
    ```
    git clone https://github.com/izam-mohammed/Notes.git
+   cd Notes
    ```
 
 2. **Setup Virtualenv (Windows)**:
