@@ -20,6 +20,8 @@
 
 Welcome to my Note-Taking Website repository! This web application is built using Django, a Python web framework, to provide a user-friendly and secure platform for managing notes. Users can sign up, log in, and log out to create, edit, and delete their notes seamlessly.
 
+![alt text](https://github.com/izam-mohammed/Notes/blob/main/Demo/demo.png)
+
 ## Features
 
 - **User Authentication:** Secure user registration, login, and logout functionalities are integrated to ensure data privacy.
