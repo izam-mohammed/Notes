@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="vh-100" style="background-image: linear-gradient(to right, rgb(208, 57, 225),orange);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <h3 class="mb-5">Notes of {{username}}</h3>
+              {% for id, note in notes %}
+              <div class="form-outline mb-4 shadow d-flex justify-content-between align-items-center ps-2 pe-2">
+                <label class="form-control form-control-lg"
+                  style="font-size: 14px; border: none; justify-content: center;">{{note}}</label>
+                <div class="d-flex flex-row">
+                  <a class="link" href="/notes/{{id}}"><i class="fa-solid fa-pen-to-square text-secondary me-3"></i></a>
+                  <a class="link" href="/delnote/{{id}}"><i class="fa-solid fa-trash text-secondary"></i></a>
+                </div>
+              </div>
+              {% endfor %}
+              <a href="/makenote"
+                style="display: block; text-decoration: none; margin: 15px; color: rgb(0, 0, 105);">New Note ? Create
+                one</a>
+              <a href="/logout">
+                <button class="btn btn-lg btn-block"
+                  style="background-color: rgb(122, 28, 28); color: white;font-size: 14px;">logout</button>
+              </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

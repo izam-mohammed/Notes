@@ -1,0 +1,9 @@
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shadow {
+  box-shadow: none;
+  cursor: pointer;
+}
