@@ -78,6 +78,25 @@ To get started with the Note Taking Website, follow these steps:
 
 Contributions are welcome! If you'd like to contribute to the project, feel free to submit issues or pull requests. Please ensure your contributions align with the project's coding standards and guidelines.
 
+## Repository Code Formatting
+
+This repository follows a consistent code formatting approach to enhance readability and maintainability.
+
+### Python Files
+
+Python files in this repository are formatted using [Black](https://github.com/psf/black). Black is an opinionated code formatter that automatically formats your Python code to adhere to the PEP 8 style guide.
+
+To ensure that your Python code is formatted correctly, you can install Black and format the code by running the following command in your terminal:
+
+```bash
+pip install black
+black .
+```
+
+### HTML Files
+
+HTML files in this repository are formatted using [Prettier](https://prettier.io/). Prettier is a code formatter that supports multiple languages, including HTML.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
