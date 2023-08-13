@@ -2,8 +2,8 @@
 
 <p>
 <img src="https://img.shields.io/badge/Django-239120?logo=django&logoColor=white" />
-<img src="https://img.shields.io/badge/Python-239120?logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-239120?logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/html5-E34F26?logo=html5&logoColor=white" />
 <img src="https://img.shields.io/badge/css3-1572B6?logo=css3&logoColor=white" />
 <img src="https://img.shields.io/badge/bootstrap-563D7C?logo=bootstrap&logoColor=white" />
@@ -11,6 +11,8 @@
 <img src="https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white" />
 <img src="https://img.shields.io/badge/GIT-E44C30?logo=git&logoColor=white" />
 <img src="https://img.shields.io/badge/prettier-1A2C34?logo=prettier&logoColor=white" />
+<img src="https://img.shields.io/badge/docker-1572B6?logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub_Actions-563D7C?logo=github-actions&logoColor=white"/>
 </p>
 
 ![PyPI v0.5](https://img.shields.io/badge/PyPI-v0.5-blue.svg)
@@ -31,6 +33,28 @@ Welcome to my Note-Taking Website repository! This web application is built usin
 - **Responsive Design:** The web application is designed to provide a seamless experience across various devices and screen sizes.
 
 ## Getting Started
+
+### Run with Docker
+
+Before you start, ensure you have the following installed:
+
+- Docker: [Docker Installation Guide](https://docs.docker.com/get-docker/)
+- Docker Compose: [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
+
+1. **Clone the Repository:** Clone this repository to your local machine using the following command:
+
+   ```
+   git clone https://github.com/izam-mohammed/Notes.git
+   cd Notes
+   ```
+
+2. **Run these:**
+   ```
+   docker-compose build
+   docker-compose up
+   ```
+
+### Manual way
 
 To get started with the Note Taking Website, follow these steps:
 
